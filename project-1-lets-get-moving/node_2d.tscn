@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdp4osmtb1053"]
+
+[ext_resource type="Texture2D" uid="uid://dwl6e60rovrvr" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cle1lgf8s7nfy" path="res://player.gd" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=508492746]
+
+[node name="Player" type="Sprite2D" parent="." unique_id=511984296]
+z_index = 1
+texture = ExtResource("1_wtcfe")
+script = ExtResource("2_0e48y")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=779138851]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=227109540]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1176300781]
