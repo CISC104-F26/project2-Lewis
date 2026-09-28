@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://mnpbol2cmjfv"]
+
+[ext_resource type="Script" uid="uid://dsnemnf0ddjlo" path="res://part_E_character_body_3d.gd" id="1_lb2gm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5agkr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qia5n"]
+
+[sub_resource type="Environment" id="Environment_qy367"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lb2gm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 0.037353516, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+
+[node name="Node3D" type="Node3D" unique_id=483471712]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=428229342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5414236, 0)
+script = ExtResource("1_lb2gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1588575573]
+shape = SubResource("CapsuleShape3D_5agkr")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1666901831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44499826, -0.42621613)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=962732471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4638243, 0, -6.4939184)
+mesh = SubResource("CylinderMesh_qia5n")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1990589238]
+environment = SubResource("Environment_qy367")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=342137313]
+transform = Transform3D(1, 0, 0, 0, 0.56246436, 0.8268215, 0, -0.8268215, 0.56246436, 0, 0, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1239858982]
+physics_material_override = SubResource("PhysicsMaterial_lb2gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=774399415]
+transform = Transform3D(14.83, 0, 0, 0, 14.83, 0, 0, 0, 14.83, 0, -0.49421266, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=2025456430]
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
