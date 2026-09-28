@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bckgobnviv10l"]
+
+[ext_resource type="Script" uid="uid://dd7olwvmiyjd0" path="res://character_body_3d.gd" id="1_a202f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_g4v7s"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a202f"]
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+
+[node name="Node3D" type="Node3D" unique_id=77349473]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=771514058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.07442)
+script = ExtResource("1_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1174408036]
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=262392026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44499826, -0.42621613)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1696279477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.87291)
+mesh = SubResource("TorusMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1707620677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4638243, 0, -6.4939184)
+mesh = SubResource("CylinderMesh_a202f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1781703412]
+environment = SubResource("Environment_g4v7s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1186485930]
+transform = Transform3D(1, 0, 0, 0, 0.56246436, 0.8268215, 0, -0.8268215, 0.56246436, 0, 0, 0)
