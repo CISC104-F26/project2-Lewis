@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://mnpbol2cmjfv"]
 
 [ext_resource type="Script" uid="uid://dsnemnf0ddjlo" path="res://part_E_character_body_3d.gd" id="1_lb2gm"]
+[ext_resource type="Material" uid="uid://c8ykp5s0wf7ol" path="res://teal.tres" id="2_06klk"]
+[ext_resource type="Material" uid="uid://dd5rl4no4spbh" path="res://orange.tres" id="3_qia5n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5agkr"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_qia5n"]
 
 [sub_resource type="Environment" id="Environment_qy367"]
 
@@ -14,6 +14,12 @@
 size = Vector3(1, 0.037353516, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lb2gm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5agkr"]
 
 [node name="Node3D" type="Node3D" unique_id=483471712]
 
@@ -27,18 +33,17 @@ shape = SubResource("CapsuleShape3D_5agkr")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1666901831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44499826, -0.42621613)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=962732471]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4638243, 1.0940409, -6.4939184)
-mesh = SubResource("CylinderMesh_qia5n")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1990589238]
 environment = SubResource("Environment_qy367")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=342137313]
 transform = Transform3D(1, 0, 0, 0, 0.56246436, 0.8268215, 0, -0.8268215, 0.56246436, 0, 0, 0)
+light_energy = 1.27
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1239858982]
-transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 0, 0, 0)
+transform = Transform3D(2.545, 0, 0, 0, 2.545, 0, 0, 0, 2.545, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_lb2gm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=774399415]
@@ -48,3 +53,42 @@ shape = SubResource("BoxShape3D_g4v7s")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=2025456430]
 transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0.015359044, 0)
 mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = ExtResource("2_06klk")
+
+[node name="Arch" type="CSGCombiner3D" parent="." unique_id=1492002040]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, -9.5, -0.35, 1.1010396)
+material_override = ExtResource("3_qia5n")
+use_collision = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Arch" unique_id=2046105820]
+transform = Transform3D(1, 0, 0, 0, 1.9409811, 0, 0, 0, 1, 0, 0.22000003, -2.8701413)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Arch" unique_id=96198484]
+transform = Transform3D(1, 0, 0, 0, 1.9409811, 0, 0, 0, 1, 0, 0.22, 0.9000001)
+mesh = SubResource("BoxMesh_lb2gm")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Arch" unique_id=1752521914]
+transform = Transform3D(1, 0, 0, 0, 1.1645887, 0, 0, 0, 4.770141, 0, 1.772785, -0.9850706)
+mesh = SubResource("BoxMesh_5agkr")
+
+[node name="Blocks" type="CSGCombiner3D" parent="." unique_id=1236245796]
+transform = Transform3D(1.565, 0, 0, 0, 1.425, 0, 0, 0, 1.565, 15.76, -0.15, -14.898959)
+material_override = ExtResource("3_qia5n")
+use_collision = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Blocks" unique_id=585418159]
+transform = Transform3D(1, 0, 0, 0, 2.5077484, 0, 0, 0, 1, -0.9999995, 0.6415887, -1.0673649)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Blocks" unique_id=606703965]
+transform = Transform3D(1, 0, 0, 0, 1.9409814, 0, 0, 0, 1, 0, 0.35820517, 0.09722352)
+mesh = SubResource("BoxMesh_lb2gm")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Blocks" unique_id=629831685]
+transform = Transform3D(1, 0, 0, 0, 1.2422284, 0, 0, 0, 1, -0.9999995, 0.008828759, -0.06736487)
+mesh = SubResource("BoxMesh_lb2gm")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Blocks" unique_id=169366752]
+transform = Transform3D(0.99999994, 0, 0, 0, -5.09058e-08, -3.3390985, 0, 1.1645886, -1.4595668e-07, 9.536743e-07, 1.0572637, -0.9850706)
+mesh = SubResource("BoxMesh_5agkr")

@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 		if input_direction:
 			direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
 			#sprint speed when on floor and with dir input only
-			if is_standing:
+			if is_standing and is_on_floor(): 
 				if Input.is_action_pressed("sprint"): move_speed = 10
 				else: move_speed = 5
 			velocity.x = direction.x * move_speed
@@ -71,4 +71,4 @@ func _process(delta: float) -> void:
 	else: $CollisionShape3D.shape.height = 1
 	
 	move_and_slide()
-	#print(velocity)
+	print(direction)
