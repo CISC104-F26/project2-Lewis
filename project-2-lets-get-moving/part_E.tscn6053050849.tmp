@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://dd5rl4no4spbh" path="res://orange.tres" id="3_qia5n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5agkr"]
-radius = 0.6
 
 [sub_resource type="Environment" id="Environment_qy367"]
 
@@ -38,11 +37,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44499826, -0.42621613)
 environment = SubResource("Environment_qy367")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=342137313]
-transform = Transform3D(1, 0, 0, 0, 0.0736976, 0.9972806, 0, -0.9972806, 0.0736976, 0, 0, 0)
-light_energy = 2.0
-light_indirect_energy = 5.545
-light_volumetric_fog_energy = 4.059
-light_angular_distance = 30.3
+transform = Transform3D(1, 0, 0, 0, 0.56246436, 0.8268215, 0, -0.8268215, 0.56246436, 0, 0, 0)
+light_energy = 1.27
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1239858982]
 transform = Transform3D(2.545, 0, 0, 0, 2.545, 0, 0, 0, 2.545, 0, 0, 0)
@@ -93,45 +91,4 @@ mesh = SubResource("BoxMesh_lb2gm")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="Blocks" unique_id=169366752]
 transform = Transform3D(0.99999994, 0, 0, 0, -5.09058e-08, -3.3390985, 0, 1.1645886, -1.4595668e-07, 9.536743e-07, 1.0572637, -0.9850706)
-mesh = SubResource("BoxMesh_5agkr")
-
-[node name="Buildings" type="CSGCombiner3D" parent="." unique_id=1182024654]
-transform = Transform3D(3.63, 0, 0, 0, 3.334, 0, 0, 0, 3.63, 16.867462, 1.363275, 17.112)
-material_override = ExtResource("3_qia5n")
-use_collision = true
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Buildings" unique_id=2059146821]
-transform = Transform3D(1, 0, 0, 0, 2.5077484, 0, 0, 0, 1, -5.186763, 0.6415887, -1.0673649)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Buildings" unique_id=136066758]
-transform = Transform3D(1.2434506, 0, 0, 0, 2.5077484, 0, 0, 0, 1.2232348, -1.7426709, 0.6415887, -0.9521889)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="Buildings" unique_id=127013766]
-transform = Transform3D(1.2434505, 0, 0, 0, 2.507748, 0, 0, 0, 1.2232339, -1.4882388, 0.64158857, -3.1432161)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Buildings" unique_id=2038678602]
-transform = Transform3D(3.9498606, 0, 0, 0, 2.5077484, 0, 0, 0, 0.5754763, -4.0848947, 0.6415887, -2.8193371)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="Buildings" unique_id=1639398864]
-transform = Transform3D(3.9496472, 0, 0, 0, 2.507748, 0, 0, 0, 0.57547593, -4.333332, 0.64158833, -7.344621)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Buildings" unique_id=1092500115]
-transform = Transform3D(-1.7264658e-07, 0, -0.57547593, 0, 0.61566967, 0, 3.949703, 0, -2.515386e-08, -4.251463, 1.8954623, -5.082004)
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="Buildings" unique_id=741811624]
-transform = Transform3D(1, 0, 0, 0, 1.8200794, 0, 0, 0, 1, -4, 0.35820517, 0.09722352)
-mesh = SubResource("BoxMesh_lb2gm")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Buildings" unique_id=501013148]
-transform = Transform3D(0.9999933, 0, 0, 0, 3.617368, 0, 0, 0, 0.9999933, -4.9999995, 1.1963989, 0.09722328)
-mesh = SubResource("BoxMesh_lb2gm")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Buildings" unique_id=958427958]
-transform = Transform3D(0.99999994, 0, 0, 0, -5.09058e-08, -3.3390985, 0, 1.1645886, -1.4595668e-07, -2.9999988, 1.0572637, -0.9850706)
 mesh = SubResource("BoxMesh_5agkr")
