@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dwl6e60rovrvr" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://cle1lgf8s7nfy" path="res://player.gd" id="2_0e48y"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0e48y"]
+[sub_resource type="PrismMesh" id="PrismMesh_n31nv"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_epypp"]
 
@@ -15,10 +15,14 @@ texture = ExtResource("1_wtcfe")
 script = ExtResource("2_0e48y")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=227109540]
-position = Vector2(349, 311)
-mesh = SubResource("PlaneMesh_0e48y")
+position = Vector2(322.00003, 317)
+rotation = 3.1415927
+scale = Vector2(114.55, 263.05002)
+mesh = SubResource("PrismMesh_n31nv")
+texture = ExtResource("1_wtcfe")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1176300781]
-position = Vector2(385, 390)
+position = Vector2(322, 335)
+scale = Vector2(125.635, 125.635)
 mesh = SubResource("TorusMesh_epypp")
 texture = ExtResource("1_wtcfe")

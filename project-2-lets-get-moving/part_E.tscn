@@ -8,6 +8,7 @@
 radius = 0.6
 
 [sub_resource type="Environment" id="Environment_qy367"]
+background_mode = 2
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lb2gm"]
 
@@ -39,10 +40,11 @@ environment = SubResource("Environment_qy367")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=342137313]
 transform = Transform3D(1, 0, 0, 0, 0.0736976, 0.9972806, 0, -0.9972806, 0.0736976, 0, 0, 0)
-light_energy = 2.0
-light_indirect_energy = 5.545
-light_volumetric_fog_energy = 4.059
-light_angular_distance = 30.3
+light_energy = 1.683
+light_indirect_energy = 4.119
+light_volumetric_fog_energy = 1.957
+light_angular_distance = 36.54
+light_specular = 0.0
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1239858982]
 transform = Transform3D(2.545, 0, 0, 0, 2.545, 0, 0, 0, 2.545, 0, 0, 0)

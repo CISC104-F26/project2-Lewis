@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 	elif is_on_wall(): 
 		velocity += (get_gravity()/2) * delta
 		if Input.is_action_just_pressed("fly_up"): 
-			velocity.y += JUMP_VELOCITY / 1.2
+			velocity.y += JUMP_VELOCITY / 1.1
 			velocity.x += get_wall_normal().x * JUMP_VELOCITY
 			velocity.z += get_wall_normal().z * JUMP_VELOCITY
 	else: velocity += get_gravity() * delta
